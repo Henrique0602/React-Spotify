@@ -7,13 +7,13 @@ const app = express();
 app.use (cors(),express.json());
  const conexao = await conectDb()
 
- conexao.on('error', (erro) => {
-     console.error('Erro ao conectar', erro)
- })
+conexao.on('error', (erro) => {
+    console.error('Erro ao conectar', erro)
+})
 
- conexao.once('open', ()=>{
-     console.log("Conectado no MongoDB")
- })
+conexao.once('open', ()=>{
+    console.log("Conectado no MongoDB")
+})
 
 app.get("/Artistas", async(req,res)=>{
     const listaArtistas = await artista.find({});
