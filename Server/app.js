@@ -1,7 +1,8 @@
 import express from 'express';
- import conectDb from './db.js';
+import conectDb from './db.js';
 import cors from 'cors'
 import artista from './models/Artista.js';
+
 
 const app = express();
 app.use (cors(),express.json());
@@ -18,6 +19,11 @@ conexao.once('open', ()=>{
 app.get("/Artistas", async(req,res)=>{
     const listaArtistas = await artista.find({});
     res.status(200).json(listaArtistas)
+})
+
+app.get('/artistas/:id', async (req,res)=>{
+    const artistas = await artista.findById(req.params.id);
+    res.status(200).json(artistas);
 })
 
 app.listen(3000, ()=>{

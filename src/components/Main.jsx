@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Main() {
   const [artistas, setArtistas] = useState([])
@@ -24,9 +25,13 @@ export default function Main() {
           artistas
             .filter(artistas => artistas.genero === "Trap")
             .map(artistas => (
-              <div className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
+              <Link to={`/Artistas/${artistas._id}`}>
+                <div className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
                 <p>{artistas.name}</p>
-              </div>
+              
+               </div>
+              </Link>
+           
             ))
         }
       </div>
