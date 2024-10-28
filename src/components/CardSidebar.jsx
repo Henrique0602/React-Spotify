@@ -1,7 +1,7 @@
 export default function CardSidebar(){
     return(
         <>
-          <div className="bg-red-500 w-32 h-32"></div>
+          <div className="bg-gray-600 w-32 h-32"></div>
         </>
         
        

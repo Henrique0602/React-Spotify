@@ -18,23 +18,80 @@ export default function Main() {
     <>
 
 
-      <div className="bg-gray-400 w-3/4 grid grid-cols-4 pl-20 items-center">
-        <h1>Gênero Trap</h1>
+      <div className="bg-gray-600 w-3/4 grid grid-cols-4 pl-20 items-center">
+        <h1 className="font-bold text-white text-xl">Gênero Trap</h1>
 
         {
           artistas
             .filter(artistas => artistas.genero === "Trap")
             .map(artistas => (
               <Link to={`/Artistas/${artistas._id}`}>
-                <div className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
-                <p>{artistas.name}</p>
-              
-               </div>
+                <div
+                  className="bg-black w-28 h-28 flex flex-col justify-around items-center"
+                  style={{
+                    backgroundImage: `url('https://img.freepik.com/fotos-premium/fundo-preto-com-gradiente-radial-cinza-suave-no-meio_380557-325.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}>
+                  <p className="text-white">{artistas.name}</p>
+                </div>
               </Link>
-           
+
             ))
         }
+
+
+
+
+        <h1 className="font-bold text-white text-xl">Gênero Funk</h1>
+
+        {
+          artistas
+            .filter(artistas => artistas.genero === "Funk")
+            .map(artistas => (
+              <Link to={`/Artistas/${artistas._id}`}>
+                <div
+                  className="bg-black w-28 h-28 flex flex-col justify-around items-center"
+                  style={{
+                    backgroundImage: `url('https://img.freepik.com/fotos-premium/fundo-preto-com-gradiente-radial-cinza-suave-no-meio_380557-325.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}>
+                  <p className="text-white">{artistas.name}</p>
+                </div>
+              </Link>
+
+            ))
+        }
+
+
+
+<h1 className="font-bold text-white text-xl">Gênero Rock</h1>
+
+{
+  artistas
+    .filter(artistas => artistas.genero === "Rock")
+    .map(artistas => (
+      <Link to={`/Artistas/${artistas._id}`}>
+        <div
+          className="bg-black w-28 h-28 flex flex-col justify-around items-center"
+          style={{
+            backgroundImage: `url('https://img.freepik.com/fotos-premium/fundo-preto-com-gradiente-radial-cinza-suave-no-meio_380557-325.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}>
+          <p className="text-white">{artistas.name}</p>
+        </div>
+      </Link>
+
+    ))
+}
+
+
+
+
       </div>
+
     </>
 
   )
