@@ -29,11 +29,15 @@ export default function Main() {
                 <div
                   className="bg-black w-28 h-28 flex flex-col justify-around items-center"
                   style={{
-                    backgroundImage: `url('https://img.freepik.com/fotos-premium/fundo-preto-com-gradiente-radial-cinza-suave-no-meio_380557-325.jpg')`,
+                    backgroundImage: `url(${artistas.imagem})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    backgroundPosition: 'center',
+                    transform: 'skewY(-5deg)', 
+                    height: '150px', 
+                    width: '50%', 
+                    borderRadius: '10px',   
                   }}>
-                  <p className="text-white">{artistas.name}</p>
+                  <p className="text-white font-bold">{artistas.name}</p>
                 </div>
               </Link>
 
@@ -53,11 +57,15 @@ export default function Main() {
                 <div
                   className="bg-black w-28 h-28 flex flex-col justify-around items-center"
                   style={{
-                    backgroundImage: `url('https://img.freepik.com/fotos-premium/fundo-preto-com-gradiente-radial-cinza-suave-no-meio_380557-325.jpg')`,
+                    backgroundImage: `url(${artistas.imagem})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    backgroundPosition: 'center',
+                    transform: 'skewY(-5deg)', 
+                    height: '150px', 
+                    width: '50%', 
+                    borderRadius: '10px',   
                   }}>
-                  <p className="text-white">{artistas.name}</p>
+                  <p className="text-white font-bold" >{artistas.name}</p>
                 </div>
               </Link>
 
@@ -76,11 +84,15 @@ export default function Main() {
         <div
           className="bg-black w-28 h-28 flex flex-col justify-around items-center"
           style={{
-            backgroundImage: `url('https://img.freepik.com/fotos-premium/fundo-preto-com-gradiente-radial-cinza-suave-no-meio_380557-325.jpg')`,
+            backgroundImage: `url(${artistas.imagem})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            backgroundPosition: 'center',
+            transform: 'skewY(-5deg)', 
+            height: '150px', 
+            width: '50%', 
+            borderRadius: '10px',   
           }}>
-          <p className="text-white">{artistas.name}</p>
+          <p className="text-white font-bold text-center">{artistas.name}</p>
         </div>
       </Link>
 
