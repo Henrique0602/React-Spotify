@@ -5,7 +5,13 @@ import artista from './models/Artista.js';
 
 
 const app = express();
-app.use (cors(),express.json());
+app.use(cors(
+    {
+        origin: "*",
+        credentials: true
+    }
+), express.json());
+
  const conexao = await conectDb()
 
 conexao.on('error', (erro) => {
@@ -15,6 +21,10 @@ conexao.on('error', (erro) => {
 conexao.once('open', ()=>{
     console.log("Conectado no MongoDB")
 })
+
+app.get('/', (req, res) => {
+    res.send('Olá API!');
+});
 
 app.get("/Artistas", async(req,res)=>{
     const listaArtistas = await artista.find({});
@@ -26,6 +36,16 @@ app.get('/artistas/:id', async (req,res)=>{
     res.status(200).json(artistas);
 })
 
+app.get('/pesquisar/:nome', async (req, res) => {
+    const { nome } = req.params;
+    const artista = await artista.find({name: new RegExp(nome, 'i')});
+    res.status(200).json(artista);
+});
+
+
 app.listen(3000, ()=>{
     console.log('Servidor rodando')
 })
+
+
+

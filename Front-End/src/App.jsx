@@ -12,8 +12,7 @@ function App() {
       <Container>
         <Sidebar>
           <CardSidebar />
-          <CardSidebar />
-          <CardSidebar />
+         
         </Sidebar>
         <Outlet/>
       </Container>
