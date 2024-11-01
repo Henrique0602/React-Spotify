@@ -6,7 +6,7 @@ export default function Main() {
 
   useEffect(() => {
 
-    fetch('http://localhost:3000/artistas')
+    fetch('http://react-spotify-ljb5.vercel.app/artistas')
       .then(res => res.json())
       .then(res => setArtistas(res))
       .catch(err => console.log(err))

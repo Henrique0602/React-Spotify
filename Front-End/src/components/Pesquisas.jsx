@@ -7,7 +7,7 @@ export default function Pesquisas(){
     const [searchResults, setSearchResults] = useState([])
 
     useEffect(() => {
-        fetch(`https://spotyglserver.vercel.app/pesquisar/${search}`)
+        fetch(`https://react-spotify-ljb5.vercel.app/pesquisar/${search}`)
         .then(response => response.json())
         .then(data => setSearchResults(data))
         .catch(error => console.error("Erro ao buscar dados:", error))
